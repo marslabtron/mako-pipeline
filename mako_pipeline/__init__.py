@@ -6,5 +6,7 @@ ASSETS = {
 }
 
 
-def configure(data):
-    ASSETS.update(data)
+def configure(data=None):
+    if data:
+        ASSETS.update(data)
+    return ASSETS
