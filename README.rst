@@ -8,6 +8,8 @@ Install
 
 mako-pipeline is avaiable on pypi::
 
+.. code-block::
+
   $ pip install mako-pipeline
 
 
@@ -15,6 +17,8 @@ Usage
 -----
 
 On your python script, call `mako_pipeline.configure` to setup file mapping::
+
+.. code-block:: python
 
   from mako_pipeline import configure
 
@@ -26,6 +30,8 @@ On your python script, call `mako_pipeline.configure` to setup file mapping::
   })
 
 On templates, import the module using `namespace` tag and use like following::
+
+.. code-block::
 
   <%namespace name="assets" module="mako_pipeline.assets" />
 
