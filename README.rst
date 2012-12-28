@@ -6,7 +6,7 @@ A sort of django-pipeline, but for mako.
 Install
 -------
 
-mako-pipeline is avaiable on pypi::
+mako-pipeline is avaiable on pypi:
 
 .. code-block::
 
@@ -16,7 +16,7 @@ mako-pipeline is avaiable on pypi::
 Usage
 -----
 
-On your python script, call `mako_pipeline.configure` to setup file mapping::
+On your python script, call `mako_pipeline.configure` to setup file mapping:
 
 .. code-block:: python
 
@@ -29,9 +29,9 @@ On your python script, call `mako_pipeline.configure` to setup file mapping::
       }
   })
 
-On templates, import the module using `namespace` tag and use like following::
+On templates, import the module using `namespace` tag and use like following:
 
-.. code-block::
+.. code-block:: html
 
   <%namespace name="assets" module="mako_pipeline.assets" />
 
