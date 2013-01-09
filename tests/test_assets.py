@@ -56,3 +56,27 @@ class TemplateTagTestCase(unittest.TestCase):
         self.assertIsNone(re.search('before:my-url/file1.js:after', content))
         self.assertIsNone(re.search('before:my-url/file2.js:after', content))
         self.assertIsNotNone(re.search('before:my-url/final-js-bundle.js:after', content))
+
+
+class ImageTagTestCase(unittest.TestCase):
+
+    TEMPLATE = """
+        <%namespace name="assets" module="mako_pipeline.assets" />
+        <img src="${assets.img('/this/is/an/image.png')}">
+    """
+
+    def test_if_can_generate_correct_url_when_debug_is_false(self):
+        configure(MOCK_CONF_PROD_MODE)
+
+        content = Template(self.TEMPLATE).render().strip()
+
+        self.assertIsNone(re.search('<img src="/this/is/an/image.png">', content))
+        self.assertIsNotNone(re.search('<img src="my-url/this/is/an/image.png">', content))
+
+    def test_if_can_generate_correct_url_when_debug_is_true(self):
+        configure(MOCK_CONF_DEBUG_MODE)
+
+        content = Template(self.TEMPLATE).render().strip()
+
+        self.assertIsNone(re.search('<img src="my-url/this/is/an/image.png">', content))
+        self.assertIsNotNone(re.search('<img src="/this/is/an/image.png">', content))

@@ -17,3 +17,12 @@ def tag(context, name, **kwargs):
         context['caller'].body(ASSETS_URL=url)
 
     return ''
+
+
+@supports_caller
+def img(context, src):
+    if ASSETS.get('debug', False):
+        return src
+
+    media_url = ASSETS['media_url']
+    return "{}{}".format(media_url, src.lstrip('/'))
