@@ -43,3 +43,31 @@ License
 -------
 
 This project is licensed under MIT license (please see LICENSE file).
+
+Some random thoughts
+====================
+
+- when compressing css, delegate the task to scss/less/etc
+- when compressing js, delegate the task to uglifyjs2/yui/etc
+- when writing files, include the md5/sha1/etc on filename
+- use a manifest file to control how img/css/js urls will be generated
+  (write the hashes there)
+
+```
+CONFIG = {
+    'debug': True,
+    'media_url': '/media/',
+    'js': {
+        'main': ['file1.js', 'file2.js'],
+    },
+    'css': {
+        'main': ['fila1.css', 'file2.css'],
+    },
+}
+
+$ tornado-pipeline --help
+  --compress-css
+  --compress-js
+  --compress-all
+
+```
