@@ -14,7 +14,7 @@ MOCK_CONF = {
 }
 
 
-class JSCompressorTest(unittest.TestCase):
+class JsCompressorTest(unittest.TestCase):
     @patch('mako_pipeline.compress.js.call')
     def test_uglifyjs_called_with_correct_args(self, call):
         in_files = ['file1.js', 'file2.js']
