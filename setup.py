@@ -19,5 +19,5 @@ setup(
     license="MIT",
     install_requires=["mako"],
     test_suite="nose.collector",
-    test_requires=["nose==1.2.1", "mock==1.0.1"]
+    test_requires=["nose==1.1.2", "mock==1.0.1", "spec==0.9.7"]
 )
